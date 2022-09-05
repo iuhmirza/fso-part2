@@ -3,7 +3,7 @@ import axios from 'axios'
 
 const Countries = ({countriesToShow}) => {
   if(countriesToShow.length > 10) {
-    return (<p>"be more specific"</p>) 
+    return (<p>Too many matches, specify another filter.</p>) 
    } else {
     if(countriesToShow.length === 1) {
       return (
