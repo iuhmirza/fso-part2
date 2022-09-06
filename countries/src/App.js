@@ -12,9 +12,27 @@ const Countries = ({countriesToShow}) => {
         </div>
       )
     } else {
-      return countriesToShow.map(country => <p key={country.name.common}>{country.name.common}</p>)
+      return countriesToShow.map(country => {
+        return (
+          <div key={country.name.common}>
+            <p>{country.name.common}</p>
+            <ShowCountry country = {country}/>
+          </div>
+        )
+      })
     }
    }
+}
+
+const ShowCountry = ({country}) => {
+  const [show, setShow] = useState(false)
+
+  return (
+    <div>
+      {show ? <DetailedCountry country = {country} /> : <></> }
+      <button onClick={() => setShow(!show)}>{show ? 'hide' : 'show'}</button>
+    </div>
+  )
 }
 
 const DetailedCountry = ({country}) => {
