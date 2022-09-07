@@ -15,4 +15,4 @@ const update = (name, newObject) => {
 }
 */
 
-export {getAll, create, update}
+export default {getAll, create}
